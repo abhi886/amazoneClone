@@ -1,41 +1,26 @@
 import Image from "next/image";
 function header() {
   return (
-    // <div>
-
-    //   <div className='flex justify-between items-center'>
-    //     {/* Left Div */}
-    //     <div className='flex '>
-    //       <div>Logo</div>
-    //       <div>Title Description</div>
-    //     </div>
-    //     {/* Middle Div */}
-    //     <div>Search Div</div>
-    //     <div></div>
-    //     {/* Right Div */}
-
-    //     <div className='flex'>
-    //       <div>Right Content 1</div>
-    //       <div>Right Content 2</div>
-    //       <div>Right Content 3</div>
-    //     </div>
-    //   </div>
-    //   {/* Small Nav below Nav */}
-    //   <div>Small Nav Below Nav</div>
-    // </div>
-    <div>
+    <header>
       {/* Top Nav */}
-      <div>
-        <div>
+      <div className='flex items-center bg-amazon_blue p-1 flex-grow py-2'>
+        {/* Image */}
+        <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
           <Image
             src='https://links.papareact.com/f90'
             width={150}
             height={40}
+            objectFit='contain'
+            className='cursor-pointer'
           />
+        </div>
+        {/* Search bar */}
+        <div className=''>
+          <input type='text' className='' />
         </div>
       </div>
       {/* Bottom Nav */}
-    </div>
+    </header>
   );
 }
 
