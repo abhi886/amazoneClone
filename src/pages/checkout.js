@@ -7,7 +7,7 @@ import { useSession } from "next-auth/client";
 import Currency from "react-currency-formatter";
 
 function Checkout() {
-  const session = useSession();
+  const [session] = useSession();
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   return (
@@ -58,12 +58,12 @@ function Checkout() {
               </h2>
               <button
                 disabled={!session}
-                className={`button ${
+                className={`button mt-2 ${
                   !session &&
                   "from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed"
                 }`}
               >
-                {!session ? "Sign in to Checkoutn" : "Proceed to checkout"}
+                {!session ? "Sign in to Checkout" : "Proceed to checkout"}
               </button>
             </>
           )}
