@@ -19,33 +19,19 @@ function Checkout() {
     const stripe = await stripePromise;
 
     //2. Call the backend to create a stripe session
-    // const checkoutSession = await axios.post("/api/create-checkout-session", {
-    //   items: items,
-    //   email: session.user.email,
-    // });
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
 
     // Redirect user/customer to Stripe Checkout
-    // const result = await stripe.redirectToCheckout({
-    //   sessionId: checkoutSession.data.id,
-    // });
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
 
-    // if (result.error) {
-    //   alert(result.error.message);
-    // }
-
-    axios
-      .post("/api/create-checkout-session", {
-        items: items,
-        email: session.user.email,
-      })
-      .then(function (checkoutSession) {
-        stripe.redirectToCheckout({
-          sessionId: checkoutSession.data.id,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
   return (
     <div className='bg-gray-100'>
