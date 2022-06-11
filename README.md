@@ -1,3 +1,8 @@
+# Amazon Clone
+Amazon clone is the clone version of frontend build of Amazon website.
+View Case Study: http://localhost:3000/works/amazon-or-jam-stack
+Visit Website: https://amazone-clone-jet.vercel.app/
+
 # Installation Steps
 
 ## Using npm
